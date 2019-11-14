@@ -1,0 +1,14 @@
+name: CloneTest
+
+on: [push]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v1
+    - name: Clone another repository
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      run: |
+        git clone https://${GITHUB_ACTOR}:${GITHUB_TOKEN}@github.com/miyohide/sample_jekyll_site_with_actions
