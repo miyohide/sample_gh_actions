@@ -21,3 +21,5 @@ jobs:
         cd sample_jekyll_site_with_actions
         bundle install  --jobs 4 --retry 3
         bundle exec jekyll build
+    - name: list files
+      run: ls -lR
