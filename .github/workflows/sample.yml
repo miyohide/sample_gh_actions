@@ -26,6 +26,6 @@ jobs:
     - name: remove jekyll site repository
       run: |
         rm -rf sample_jekyll_site_with_actions
-    - name: list files
+    - name: exec commit.sh
       run: |
-        ls -lR
+        ./commit.sh
