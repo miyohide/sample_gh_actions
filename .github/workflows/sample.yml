@@ -1,4 +1,4 @@
-name: CloneTest
+name: jekyll build
 
 on: [push]
 
