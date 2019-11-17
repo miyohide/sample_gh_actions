@@ -27,5 +27,7 @@ jobs:
       run: |
         rm -rf sample_jekyll_site_with_actions
     - name: exec commit.sh
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       run: |
         ./commit.sh
