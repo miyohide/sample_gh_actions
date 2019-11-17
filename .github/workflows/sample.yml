@@ -23,6 +23,9 @@ jobs:
         bundle exec jekyll build
     - name: move jekyll build result
       run: mv sample_jekyll_site_with_actions/_site .
+    - name: remove jekyll site repository
+      run: |
+        rm -rf sample_jekyll_site_with_actions
     - name: list files
       run: |
         ls -lR
