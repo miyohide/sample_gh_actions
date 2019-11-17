@@ -21,5 +21,8 @@ jobs:
         cd sample_jekyll_site_with_actions
         bundle install  --jobs 4 --retry 3
         bundle exec jekyll build
+    - name: move jekyll build result
+      run: mv sample_jekyll_site_with_actions/_site .
     - name: list files
-      run: ls -lR
+      run: |
+        ls -lR
