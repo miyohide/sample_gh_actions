@@ -12,10 +12,12 @@ jobs:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       run: |
         git clone https://${GITHUB_ACTOR}:${GITHUB_TOKEN}@github.com/miyohide/sample_jekyll_site_with_actions
-    - name: list files
-      run: |
-        ls -lR
     - name: Set up Ruby 2.6
       uses: actions/setup-ruby@v1
       with:
         ruby-version: 2.6.x
+    - name: jekyll build
+      run: |
+        cd sample_jekyll_site_with_actions
+        bundle install  --jobs 4 --retry 3
+        bundle exec jekyll build
